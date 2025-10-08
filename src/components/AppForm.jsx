@@ -1,15 +1,9 @@
 import { useState } from "react";
 
-const articles = [
-    'art1', 
-    'art2', 
-    'art3', 
-    'art4'
-]
 
-export default function AppForm (){
-    const [newArticle, setNewArticle] = useState('');//collega l'input
-    const [listArticle, setlistArticle] = useState(articles); //collega l'array
+
+export default function AppForm ({newArticle, setNewArticle, listArticle, setlistArticle, articles}){
+
 
     console.log(articles);
     
@@ -53,14 +47,14 @@ export default function AppForm (){
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
       <ul>
-      {listArticle.map((art, i) => 
-      <li key={i}>
+        {listArticle.map((art, i) => 
+        <li key={i}>
         <span>{art}</span>
         <button className="btn btn-danger" onClick={()=>handleTrash(i)}>
             <i className="bi bi-trash3"></i>
         </button>
         </li>
-    )}
+        )}
       </ul>
       </>
     )
