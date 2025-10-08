@@ -2,8 +2,9 @@ import { useState } from "react";
 
 
 
-export default function AppForm ({newArticle, setNewArticle, listArticle, setlistArticle, articles,}){
+export default function AppForm ({listArticle, setlistArticle, articles,}){
 
+    const [newArticle, setNewArticle] = useState('');//collega l'input
 
     console.log(articles);
     
@@ -20,17 +21,7 @@ export default function AppForm ({newArticle, setNewArticle, listArticle, setlis
         
     }
 
-    function handleTrash(i){
-        console.log(i);
-        //mi deve restituire quelli diversi e quiindi la lista senza l'elemento selezionato
-        const filteredArt = listArticle.filter((art, index) => {
-            return index != i})
-        console.log(filteredArt);
-        
-        setlistArticle(filteredArt);
-        console.log(listArticle);
-        
-    }
+
 
 
 
