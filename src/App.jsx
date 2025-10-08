@@ -10,6 +10,7 @@ const articles = [
 ]
 function App() {
   const [listArticle, setlistArticle] = useState(articles); //collega l'array
+
   function handleTrash(i){
     console.log(i);
     //mi deve restituire quelli diversi e quiindi la lista senza l'elemento selezionato
@@ -20,10 +21,13 @@ function App() {
     setlistArticle(filteredArt);
     console.log(listArticle);
     
-}
+  }
+  function addItem(newItem){
+    setlistArticle([newItem, ...listArticle]);
+  }
   return (
     <>
-    <AppForm listArticle={listArticle} setlistArticle={setlistArticle} articles = {articles} />
+    <AppForm addItem={addItem} articles = {articles} />
     <ul>
         {listArticle.map((art, i) => 
         <li key={i}>

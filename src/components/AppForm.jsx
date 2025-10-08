@@ -2,31 +2,25 @@ import { useState } from "react";
 
 
 
-export default function AppForm ({listArticle, setlistArticle, articles,}){
+export default function AppForm ({addItem, articles}){
 
     const [newArticle, setNewArticle] = useState('');//collega l'input
 
     console.log(articles);
     
     console.log(newArticle);
-    console.log(listArticle);
+
 
     function handleSubmit(e){
         e.preventDefault();
         console.log("ciao");
         console.log(newArticle);
 
-        setlistArticle([newArticle, ...listArticle]);
-        console.log(listArticle);
+        addItem(newArticle)
         
     }
 
-
-
-
-
     return(
-
         <>
         <form onSubmit={handleSubmit}>
         <div class="mb-3">
