@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 
-export default function AppForm ({newArticle, setNewArticle, listArticle, setlistArticle, articles}){
+export default function AppForm ({newArticle, setNewArticle, listArticle, setlistArticle, articles,}){
 
 
     console.log(articles);
@@ -46,16 +46,7 @@ export default function AppForm ({newArticle, setNewArticle, listArticle, setlis
         
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-      <ul>
-        {listArticle.map((art, i) => 
-        <li key={i}>
-        <span>{art}</span>
-        <button className="btn btn-danger" onClick={()=>handleTrash(i)}>
-            <i className="bi bi-trash3"></i>
-        </button>
-        </li>
-        )}
-      </ul>
+
       </>
     )
 }

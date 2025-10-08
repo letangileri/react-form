@@ -14,7 +14,17 @@ function App() {
 
   return (
     <>
-    <AppForm newArt = {newArticle} setNewArticle={setNewArticle} listArt={listArticle} setListArt={setlistArticle} art = {articles}/>
+    <AppForm newArticle = {newArticle} setNewArticle={setNewArticle} listArticle={listArticle} setlistArticle={setlistArticle} articles = {articles} />
+    <ul>
+        {listArticle.map((art, i) => 
+        <li key={i}>
+        <span>{art}</span>
+        <button className="btn btn-danger" onClick={()=>handleTrash(i)}>
+            <i className="bi bi-trash3"></i>
+        </button>
+        </li>
+        )}
+      </ul>
     </>
   )
 }
